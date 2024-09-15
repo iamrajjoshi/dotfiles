@@ -12,8 +12,6 @@ alias gpu='git push'
 alias gdb='git branch -D $(git branch | fzf --multi)'
 alias gl='git checkout -'
 
-alias edit_git_alias='vim /Users/rajjoshi/.oh-my-zsh/custom/git_alias.zsh'
-
 alias glist='git branch | fzf --height 40% --reverse | xargs git checkout'
 
 alias gmas='_mas_helper "$@"'
