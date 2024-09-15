@@ -83,3 +83,8 @@ $GREEN ptlf$NORMAL  — Run last failed tests for a specific file (e.g., ptlf te
 $GREEN ptc$NORMAL   — Run pytest with custom options (e.g., ptc -sv test_file.py)"
 }
 
+# Edit files
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias gitconfig="vim ~/.gitconfig"
+alias aliases="vim ~/.aliases.zsh"

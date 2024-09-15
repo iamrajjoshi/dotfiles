@@ -11,15 +11,10 @@ plugins=(git direnv)
 
 source $ZSH/oh-my-zsh.sh
 
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source ~/.git_alias.zsh
-
-eval "$(direnv hook zsh)"
+source ~/.aliases.zsh
 
 if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local

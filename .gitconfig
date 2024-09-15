@@ -1,6 +1,4 @@
-# This is Git's per-user configuration file.
 [user]
-# Please adapt and uncomment the following lines:
 	name = Raj Joshi
 	email = rajjoshi.0222@gmail.com
 [filter "lfs"]
