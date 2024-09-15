@@ -1,0 +1,24 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Raj Joshi
+	email = rajjoshi.0222@gmail.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[alias]
+	a = commit --amend
+	cm = commit -m
+	co = checkout
+	cob = checkout -b
+	s = status
+	uncommit = reset --soft HEAD^
+	paid = push
+	lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate=full
+[push]
+	autoSetupRemote = true
+[include]
+    path = ~/.gitconfig_local
