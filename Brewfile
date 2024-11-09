@@ -23,6 +23,7 @@ cask 'slack'
 cask 'spotify'
 cask 'visual-studio-code'
 cask "notion"
+cask 'tomatobar'
 
 # Fonts
 cask 'font-jetbrains-mono'
