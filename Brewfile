@@ -1,30 +1,43 @@
 # Taps
-tap 'homebrew/bundle'
-tap 'homebrew/cask-fonts'
-tap 'homebrew/cask-versions'
-tap 'homebrew/cask'
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/services"
 
-# Binaries
-brew 'coreutils' # Those that come with macOS are outdated
-brew 'direnv'
-brew 'ffmpeg'
-brew 'fzf'
-brew 'git'
-brew 'grep'
+# Core Tools & Development
+brew "cask"
+brew "coreutils"
+brew "direnv"
+brew "docker"
+brew "fzf"
+brew "git"
+brew "git-machete"
+brew "grep"
+brew "ffmpeg"
+brew "python"
 
 # Applications
-cask '1password'
-cask 'discord'
-cask 'docker'
-cask 'github'
-cask 'iterm2'
-cask 'rectangle'
-cask 'slack'
-cask 'spotify'
-cask 'visual-studio-code'
+cask "1password"
+cask "arc"
+cask "chromedriver"
+cask "discord"
+cask "docker"
+cask "github"
+cask "cursor"
+cask "fork"
+cask "iterm2"
+cask "boop"
+cask "maccy"
+cask "ngrok"
 cask "notion"
-cask 'tomatobar'
+cask "netnewswire"
+cask "raycast"
+cask "rectangle"
+cask "slack"
+cask "shottr"
+cask "spotify"
+cask "tomatobar"
+cask "visual-studio-code"
 
 # Fonts
-cask 'font-jetbrains-mono'
-cask 'font-meslo-lg-nerd-font'
+cask "font-jetbrains-mono"
+cask "font-meslo-lg-nerd-font"
