@@ -37,6 +37,7 @@ cask "shottr"
 cask "spotify"
 cask "tomatobar"
 cask "visual-studio-code"
+cask "orbstack"
 
 # Fonts
 cask "font-jetbrains-mono"
