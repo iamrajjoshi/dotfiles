@@ -1,5 +1,6 @@
 # Git abbreviations
 abbr -a ga 'git add .'
+abbr -a gb 'git branch'
 abbr -a gp 'git pull'
 abbr -a gca 'git commit --amend'
 abbr -a gcm 'git commit -m'
