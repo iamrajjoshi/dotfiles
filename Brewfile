@@ -3,12 +3,20 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/services"
 
+# Terminal
+brew "fish"
+# Need to install Fisher manually
+# https://github.com/jorgebucaran/fisher
+brew "starship"
+
+
 # Core Tools & Development
 brew "cask"
 brew "coreutils"
 brew "direnv"
 brew "docker"
 brew "fzf"
+brew "lsd"
 brew "git"
 brew "git-machete"
 brew "grep"
