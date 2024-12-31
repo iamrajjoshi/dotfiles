@@ -46,6 +46,7 @@ cask "spotify"
 cask "tomatobar"
 cask "visual-studio-code"
 cask "orbstack"
+cask "keepingyouawake"
 
 # Fonts
 cask "font-jetbrains-mono"
