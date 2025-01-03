@@ -11,7 +11,7 @@ abbr -a gs 'git status'
 abbr -a gucm 'git reset --soft HEAD^'
 abbr -a paid 'git push'
 abbr -a gpu 'git push'
-abbr -a gdb 'git branch -D (git branch | fzf --multi)'
+abbr -a gdb 'git branch -D (git branch | string trim | fzf --multi)'
 abbr -a gl 'git checkout -'
 abbr -a glist 'git branch | fzf --height 40% --reverse | xargs git checkout'
 
