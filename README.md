@@ -33,7 +33,11 @@ brew bundle install
 
 ### 2.1 - System Preferences
 
-todo
+Reduce the animation speed of the dock:
+
+```bash
+defaults write com.apple.dock autohide-time-modifier -float 0.15; killall Dock
+```
 
 ### 2.2 - Preinstalled Apps
 
