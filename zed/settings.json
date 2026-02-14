@@ -1,0 +1,58 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "edit_predictions": {
+    "provider": "zed",
+  },
+  "icon_theme": "Material Icon Theme",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "minimap": {
+    "show": "auto",
+  },
+  "terminal": {
+    "button": false,
+  },
+  "debugger": {
+    "button": false,
+  },
+  "show_completions_on_input": true,
+  // "disable_ai": true,
+  "show_call_status_icon": false,
+  "base_keymap": "VSCode",
+  "ui_font_size": 16,
+  "buffer_font_family": "JetBrains Mono NL",
+  "buffer_font_size": 12.0,
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Light",
+    "dark": "Aurora",
+  },
+  "collaboration_panel": {
+    "button": false,
+  },
+  "notification_panel": {
+    "button": false,
+  },
+  "title_bar": {
+    "show_sign_in": false,
+  },
+  "agent": {
+    "button": false,
+  },
+  "git": {
+    "inline_blame": {
+      "padding": 10,
+      "show_commit_summary": true,
+      "enabled": true,
+    },
+  },
+}

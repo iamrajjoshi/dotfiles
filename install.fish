@@ -89,4 +89,52 @@ if not grep -q "starship init fish | source" $CONFIG_DIR/config.fish
     echo "starship init fish | source" >> $CONFIG_DIR/config.fish
 end
 
-echo "Fish and Starship configuration files have been symlinked successfully!"
+# Setup Ghostty
+set GHOSTTY_CONFIG_DIR ~/.config/ghostty
+mkdir -p $GHOSTTY_CONFIG_DIR
+
+set ghostty_source "$DOTFILES_DIR/ghostty/config"
+set ghostty_target "$GHOSTTY_CONFIG_DIR/config"
+
+if not test -e $ghostty_source
+    echo "Warning: Ghostty config not found at $ghostty_source"
+else
+    if test -e $ghostty_target
+        if test -L $ghostty_target
+            rm $ghostty_target
+            echo "Removed existing ghostty symlink: $ghostty_target"
+        else
+            mv $ghostty_target "$ghostty_target.backup"
+            echo "Backed up existing ghostty config: $ghostty_target.backup"
+        end
+    end
+
+    ln -s $ghostty_source $ghostty_target
+    echo "Created ghostty symlink: $ghostty_target -> $ghostty_source"
+end
+
+# Setup Zed
+set ZED_CONFIG_DIR ~/.config/zed
+mkdir -p $ZED_CONFIG_DIR
+
+set zed_source "$DOTFILES_DIR/zed/settings.json"
+set zed_target "$ZED_CONFIG_DIR/settings.json"
+
+if not test -e $zed_source
+    echo "Warning: Zed settings not found at $zed_source"
+else
+    if test -e $zed_target
+        if test -L $zed_target
+            rm $zed_target
+            echo "Removed existing zed symlink: $zed_target"
+        else
+            mv $zed_target "$zed_target.backup"
+            echo "Backed up existing zed settings: $zed_target.backup"
+        end
+    end
+
+    ln -s $zed_source $zed_target
+    echo "Created zed symlink: $zed_target -> $zed_source"
+end
+
+echo "Fish, Starship, Ghostty, and Zed configuration files have been symlinked successfully!"
