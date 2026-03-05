@@ -33,3 +33,7 @@ macos-icon = glass
 
 # Keybindings
 keybind = cmd+enter=unbind
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
+
+# 25 MB scrollback
+scrollback-limit = 25000000
