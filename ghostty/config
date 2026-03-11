@@ -30,10 +30,32 @@ palette = 15=#ededec
 # Icon
 macos-icon = glass
 
+# Option keys send Alt sequences (for word navigation: Opt+Left/Right)
+macos-option-as-alt = true
+
 
 # Keybindings
 keybind = cmd+enter=unbind
-keybind = global:ctrl+grave_accent=toggle_quick_terminal
+
+# tmux integration — Cmd keys send prefix (Ctrl-A) sequences to tmux
+keybind = cmd+d=text:\x01\\
+keybind = cmd+shift+d=text:\x01-
+keybind = cmd+t=text:\x01c
+keybind = cmd+w=text:\x01x
+keybind = cmd+shift+left_bracket=text:\x01p
+keybind = cmd+shift+right_bracket=text:\x01n
+keybind = ctrl+tab=text:\x01n
+keybind = ctrl+shift+tab=text:\x01p
+keybind = cmd+1=text:\x011
+keybind = cmd+2=text:\x012
+keybind = cmd+3=text:\x013
+keybind = cmd+4=text:\x014
+keybind = cmd+5=text:\x015
+keybind = cmd+6=text:\x016
+keybind = cmd+7=text:\x017
+keybind = cmd+8=text:\x018
+keybind = cmd+9=text:\x019
+# keybind = global:ctrl+grave_accent=toggle_quick_terminal
 
 # 25 MB scrollback
 scrollback-limit = 25000000
