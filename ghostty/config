@@ -37,3 +37,6 @@ keybind = global:ctrl+grave_accent=toggle_quick_terminal
 
 # 25 MB scrollback
 scrollback-limit = 25000000
+
+# Auto-start tmux (attach to existing session or create "main")
+command = /opt/homebrew/bin/tmux new-session -A -s main

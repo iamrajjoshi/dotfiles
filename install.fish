@@ -137,4 +137,25 @@ else
     echo "Created zed symlink: $zed_target -> $zed_source"
 end
 
-echo "Fish, Starship, Ghostty, and Zed configuration files have been symlinked successfully!"
+# Setup tmux
+set tmux_source "$DOTFILES_DIR/tmux/tmux.conf"
+set tmux_target "$HOME/.tmux.conf"
+
+if not test -e $tmux_source
+    echo "Warning: tmux config not found at $tmux_source"
+else
+    if test -e $tmux_target
+        if test -L $tmux_target
+            rm $tmux_target
+            echo "Removed existing tmux symlink: $tmux_target"
+        else
+            mv $tmux_target "$tmux_target.backup"
+            echo "Backed up existing tmux config: $tmux_target.backup"
+        end
+    end
+
+    ln -s $tmux_source $tmux_target
+    echo "Created tmux symlink: $tmux_target -> $tmux_source"
+end
+
+echo "Fish, Starship, Ghostty, Zed, and tmux configuration files have been symlinked successfully!"
