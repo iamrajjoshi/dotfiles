@@ -42,10 +42,9 @@ keybind = cmd+d=text:\x01\\
 keybind = cmd+shift+d=text:\x01-
 keybind = cmd+t=text:\x01c
 keybind = cmd+w=text:\x01x
+keybind = cmd+shift+w=text:\x01X
 keybind = cmd+shift+left_bracket=text:\x01p
 keybind = cmd+shift+right_bracket=text:\x01n
-keybind = ctrl+tab=text:\x01n
-keybind = ctrl+shift+tab=text:\x01p
 keybind = cmd+1=text:\x011
 keybind = cmd+2=text:\x012
 keybind = cmd+3=text:\x013
@@ -55,6 +54,10 @@ keybind = cmd+6=text:\x016
 keybind = cmd+7=text:\x017
 keybind = cmd+8=text:\x018
 keybind = cmd+9=text:\x019
+keybind = cmd+opt+left=text:\x01h
+keybind = cmd+opt+right=text:\x01l
+keybind = cmd+opt+up=text:\x01k
+keybind = cmd+opt+down=text:\x01j
 # keybind = global:ctrl+grave_accent=toggle_quick_terminal
 
 # 25 MB scrollback
