@@ -83,3 +83,15 @@ function ptlf
         pytest -vs --lf $argv
     end
 end
+
+function gcm-perf
+    git commit -m ":zap: perf: $argv"
+end
+
+function gcm-style
+    git commit -m ":art: style: $argv"
+end
+
+# Tmux abbreviations
+abbr -a tls 'tmux ls'
+abbr -a ta 'tmux attach -d -t'

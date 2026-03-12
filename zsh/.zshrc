@@ -1,21 +1,22 @@
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# Homebrew (macOS only)
+if [[ "$(uname)" == "Darwin" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
+# Oh-My-Zsh
+export ZSH="${HOME}/.oh-my-zsh"
+ZSH_THEME=""
 plugins=(git direnv zsh-autosuggestions zsh-syntax-highlighting)
-
 source $ZSH/oh-my-zsh.sh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Editor
+export EDITOR="zed --wait"
 
+# Aliases
 source ~/.aliases.zsh
 
-if [ -f ~/.zshrc_local ]; then
-    source ~/.zshrc_local
-fi
+# Starship prompt
+eval "$(starship init zsh)"
+
+# Local overrides (work-specific, machine-specific)
+[[ -f ~/.zshrc_local ]] && source ~/.zshrc_local
