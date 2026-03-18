@@ -36,6 +36,8 @@ macos-option-as-alt = true
 
 # Keybindings
 keybind = cmd+enter=unbind
+keybind = cmd+left=text:\x1bOH
+keybind = cmd+right=text:\x1bOF
 
 # tmux integration — Cmd keys send prefix (Ctrl-A) sequences to tmux
 keybind = cmd+d=text:\x01\\

@@ -10,7 +10,7 @@ plugins=(git direnv zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Editor
-export EDITOR="zed --wait"
+export EDITOR="code --wait"
 
 # Aliases
 source ~/.aliases.zsh
