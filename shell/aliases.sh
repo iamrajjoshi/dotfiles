@@ -108,3 +108,6 @@ $GREEN ptlf$NORMAL  — Run last failed tests for a specific file (e.g., ptlf te
 alias zshconfig="vim ~/.zshrc"
 alias gitconfig="vim ~/.gitconfig"
 alias aliases="vim ~/.aliases.zsh"
+
+# Claude Code
+alias c='claude --dangerously-skip-permissions'
