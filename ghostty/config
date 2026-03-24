@@ -28,7 +28,7 @@ palette = 14=#8be9fd
 palette = 15=#ededec
 
 # Icon
-macos-icon = glass
+macos-icon = retro
 
 # Option keys send Alt sequences (for word navigation: Opt+Left/Right)
 macos-option-as-alt = true
