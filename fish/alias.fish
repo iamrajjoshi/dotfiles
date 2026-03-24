@@ -5,5 +5,5 @@ alias ls=lsd
 source ~/.config/fish/git.fish
 
 # Claude Code
-alias c='claude --dangerously-skip-permissions'
+alias c='claude'
 
