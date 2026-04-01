@@ -1,5 +1,5 @@
 # Font
-font-family = JetBrains Mono NL
+font-family = JetBrainsMonoNL Nerd Font Mono
 font-size = 12
 
 # Colors
@@ -61,6 +61,14 @@ keybind = cmd+opt+right=text:\x01l
 keybind = cmd+opt+up=text:\x01k
 keybind = cmd+opt+down=text:\x01j
 # keybind = global:ctrl+grave_accent=toggle_quick_terminal
+
+# Neovim Cmd-key bindings — remap Cmd to Ctrl/Ctrl+Shift (CSI u encoding)
+# tmux doesn't understand Super/Cmd modifier, but handles Ctrl (5) and Ctrl+Shift (6) fine
+keybind = cmd+p=text:\x1b[112;5u
+keybind = cmd+shift+f=text:\x1b[102;6u
+keybind = cmd+b=text:\x1b[98;6u
+keybind = cmd+s=text:\x1b[115;5u
+keybind = cmd+/=text:\x1b[47;5u
 
 # 25 MB scrollback
 scrollback-limit = 25000000

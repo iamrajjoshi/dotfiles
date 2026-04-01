@@ -23,6 +23,13 @@ brew "grep"
 brew "ffmpeg"
 brew "python"
 
+# Neovim
+brew "neovim"
+brew "fd"
+brew "ripgrep"
+brew "lazygit"
+brew "tree-sitter"
+
 # Applications
 cask "1password"
 cask "arc"
@@ -49,4 +56,5 @@ cask "keepingyouawake"
 
 # Fonts
 cask "font-jetbrains-mono"
+cask "font-jetbrains-mono-nerd-font"
 cask "font-meslo-lg-nerd-font"
