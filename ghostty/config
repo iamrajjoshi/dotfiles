@@ -69,6 +69,8 @@ keybind = cmd+shift+f=text:\x1b[102;6u
 keybind = cmd+b=text:\x1b[98;6u
 keybind = cmd+s=text:\x1b[115;5u
 keybind = cmd+/=text:\x1b[47;5u
+keybind = cmd+z=text:\x1b[122;5u
+keybind = cmd+shift+z=text:\x1b[122;6u
 
 # 25 MB scrollback
 scrollback-limit = 25000000
