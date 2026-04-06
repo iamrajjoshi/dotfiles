@@ -12,6 +12,9 @@ source $ZSH/oh-my-zsh.sh
 # Editor
 export EDITOR="code --wait"
 
+# Claude Code
+export CLAUDE_CODE_NO_FLICKER=1
+
 # Aliases
 source ~/.aliases.zsh
 
