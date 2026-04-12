@@ -22,6 +22,7 @@ brew "git-machete"
 brew "grep"
 brew "ffmpeg"
 brew "python"
+brew "rtk"
 
 # Neovim
 brew "neovim"
