@@ -110,4 +110,5 @@ alias gitconfig="vim ~/.gitconfig"
 alias aliases="vim ~/.aliases.zsh"
 
 # Claude Code
-alias c='claude'
+alias c='claude --dangerously-skip-permissions'
+alias cost='npx ccusage@latest'
