@@ -48,6 +48,7 @@ symlink "${DOTFILES_DIR}/ghostty/config"      ~/.config/ghostty/config
 echo "--- Zed ---"
 mkdir -p ~/.config/zed
 symlink "${DOTFILES_DIR}/zed/settings.json"   ~/.config/zed/settings.json
+symlink "${DOTFILES_DIR}/zed/keymap.json"     ~/.config/zed/keymap.json
 
 # Git
 echo "--- Git ---"

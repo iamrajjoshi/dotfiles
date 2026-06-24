@@ -38,6 +38,7 @@ zsh/                  # Zsh configs (Starship, Oh-My-Zsh)
 tmux/tmux.conf        # Tmux config
 ghostty/config        # Ghostty terminal config
 zed/settings.json     # Zed editor settings
+zed/keymap.json       # Zed key bindings
 starship.toml         # Shared Starship prompt
 .gitconfig            # Git config (includes ~/.gitconfig_local)
 Brewfile              # Homebrew packages
