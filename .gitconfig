@@ -1,6 +1,7 @@
 [user]
 	name = Raj Joshi
 	email = rajjoshi.0222@gmail.com
+	signingkey = /Users/raj.joshi/.ssh/id_ed25519.pub
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -29,3 +30,9 @@
 	dark = true
 [merge]
 	conflictStyle = zdiff3
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[gpg "ssh"]
+	allowedSignersFile = /Users/raj.joshi/.ssh/allowed_signers

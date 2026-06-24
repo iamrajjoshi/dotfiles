@@ -7,6 +7,16 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "disable_ai": true,
   "edit_predictions": {
     "provider": "zed",
   },
@@ -37,6 +47,7 @@
     "dark": "Aurora",
   },
   "collaboration_panel": {
+    "dock": "left",
     "button": false,
   },
   "notification_panel": {
@@ -46,6 +57,7 @@
     "show_sign_in": false,
   },
   "agent": {
+    "dock": "right",
     "button": false,
   },
   "git": {
