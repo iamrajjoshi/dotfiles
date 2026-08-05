@@ -106,12 +106,14 @@ symlink "${DOTFILES_DIR}/.gitconfig"          ~/.gitconfig
 echo
 echo "=== dotfiles linked ==="
 
-# Install Fisher if missing
+# Install Fisher if missing, then sync the declarative plugin list
 if command -v fish >/dev/null 2>&1; then
     if ! fish -c 'functions -q fisher' 2>/dev/null; then
         echo "Installing Fisher..."
-        fish -c 'curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher && fisher update'
+        fish -c 'curl -fsSL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher'
     fi
+    echo "Syncing Fisher plugins..."
+    fish -c 'fisher update'
 fi
 
 # Install Starship if missing
