@@ -1,0 +1,10 @@
+{
+	"color_scheme": "Monokai.sublime-color-scheme",
+	"font_size": 18,
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"theme": "Default Dark.sublime-theme",
+	"index_files": false,
+}

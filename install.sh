@@ -50,6 +50,19 @@ mkdir -p ~/.config/zed
 symlink "${DOTFILES_DIR}/zed/settings.json"   ~/.config/zed/settings.json
 symlink "${DOTFILES_DIR}/zed/keymap.json"     ~/.config/zed/keymap.json
 
+# Sublime Text
+echo "--- Sublime Text ---"
+SUBLIME_USER_DIR="$HOME/Library/Application Support/Sublime Text/Packages/User"
+mkdir -p "$SUBLIME_USER_DIR"
+symlink "${DOTFILES_DIR}/sublime/Preferences.sublime-settings" "$SUBLIME_USER_DIR/Preferences.sublime-settings"
+symlink "${DOTFILES_DIR}/sublime/Package Control.sublime-settings" "$SUBLIME_USER_DIR/Package Control.sublime-settings"
+
+# iTerm2
+echo "--- iTerm2 ---"
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "${DOTFILES_DIR}/iterm2"
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+echo "Configured iTerm2 to load preferences from ${DOTFILES_DIR}/iterm2"
+
 # Git
 echo "--- Git ---"
 symlink "${DOTFILES_DIR}/.gitconfig"          ~/.gitconfig
