@@ -13,6 +13,32 @@ symlink() {
     echo "Linked $dst -> $src"
 }
 
+restore_terminal_profile() {
+    local profile_path="$1"
+    local terminal_preferences_file
+    terminal_preferences_file="$(mktemp -t raj-dotfiles-terminal)"
+
+    if ! defaults export com.apple.Terminal "$terminal_preferences_file" >/dev/null 2>&1; then
+        plutil -create xml1 "$terminal_preferences_file"
+    fi
+
+    /usr/libexec/PlistBuddy -c "Add :'Window Settings' dict" "$terminal_preferences_file" 2>/dev/null || true
+    /usr/libexec/PlistBuddy -c "Delete :'Window Settings':'Clear Dark'" "$terminal_preferences_file" 2>/dev/null || true
+    /usr/libexec/PlistBuddy -c "Add :'Window Settings':'Clear Dark' dict" "$terminal_preferences_file"
+    /usr/libexec/PlistBuddy -c "Merge '$profile_path' :'Window Settings':'Clear Dark'" "$terminal_preferences_file"
+
+    for key in "Default Window Settings" "Startup Window Settings"; do
+        /usr/libexec/PlistBuddy -c "Delete :'$key'" "$terminal_preferences_file" 2>/dev/null || true
+        /usr/libexec/PlistBuddy -c "Add :'$key' string 'Clear Dark'" "$terminal_preferences_file"
+    done
+
+    if ! defaults import com.apple.Terminal "$terminal_preferences_file" >/dev/null; then
+        rm -f "$terminal_preferences_file"
+        return 1
+    fi
+    rm -f "$terminal_preferences_file"
+}
+
 echo "=== dotfiles installer ==="
 echo "Source: $DOTFILES_DIR"
 echo
@@ -62,6 +88,16 @@ echo "--- iTerm2 ---"
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "${DOTFILES_DIR}/iterm2"
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 echo "Configured iTerm2 to load preferences from ${DOTFILES_DIR}/iterm2"
+
+# Terminal
+echo "--- Terminal ---"
+restore_terminal_profile "${DOTFILES_DIR}/terminal/Clear Dark.terminal"
+echo "Restored Clear Dark as Terminal's startup and default profile"
+
+# Rectangle
+echo "--- Rectangle ---"
+defaults import com.knollsoft.Rectangle "${DOTFILES_DIR}/rectangle/com.knollsoft.Rectangle.plist" >/dev/null
+echo "Restored Rectangle shortcuts"
 
 # Git
 echo "--- Git ---"

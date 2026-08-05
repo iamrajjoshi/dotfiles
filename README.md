@@ -37,7 +37,9 @@ fish/                 # Fish shell configs
 zsh/                  # Zsh configs (Starship, Oh-My-Zsh)
 tmux/tmux.conf        # Tmux config
 ghostty/config        # Ghostty terminal config
-iterm2/               # Portable iTerm2 preferences and Raj profile
+iterm2/               # Portable iTerm2 preferences and Default/Raj profiles
+terminal/             # Clear Dark Terminal profile
+rectangle/            # Rectangle shortcuts and related behavior
 sublime/              # Sublime Text preferences and package manifest
 zed/settings.json     # Zed editor settings
 zed/keymap.json       # Zed key bindings
@@ -59,8 +61,12 @@ On a personal machine without local overrides, everything works standalone.
 
 ## Application Preferences
 
-- **iTerm2:** `install.sh` configures iTerm2 to load the curated preferences in this repo. Restart iTerm2 after running it.
+- **iTerm2:** `install.sh` configures iTerm2 to load the curated preferences and Default/Raj profiles in this repo.
+- **Terminal:** `install.sh` merges the Clear Dark profile into Terminal and selects it for startup and new windows.
+- **Rectangle:** `install.sh` restores the saved shortcuts, including intentionally disabled half-screen shortcuts.
 - **Sublime Text:** `install.sh` links the user preferences and Package Control manifest. On a new machine, choose **Tools → Install Package Control** once; Package Control will then restore JsPrettier.
+
+Quit iTerm2, Terminal, and Rectangle before running `install.sh`, then reopen them afterward.
 
 ## macOS Settings
 
