@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "session": {
+    "trust_all_worktrees": false
+  },
   "project_panel": {
     "dock": "left"
   },
@@ -19,6 +22,24 @@
   "disable_ai": true,
   "edit_predictions": {
     "provider": "zed",
+  },
+  "auto_install_extensions": {
+    "aurora-theme": true,
+    "docker-compose": true,
+    "dockerfile": true,
+    "graphql": true,
+    "html": true,
+    "material-icon-theme": true,
+    "oxc": true,
+    "proto": true,
+    "scss": true,
+    "sql": true,
+    "starlark": true,
+    "stylelint": true,
+    "thrift": true,
+    "tombi": true,
+    "toml": true,
+    "xml": true,
   },
   "icon_theme": "Material Icon Theme",
   "telemetry": {
