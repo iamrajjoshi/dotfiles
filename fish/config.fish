@@ -4,7 +4,10 @@ source ~/.config/fish/alias.fish
 set fish_greeting ""
 
 # Set up brew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+/opt/homebrew/bin/brew shellenv fish | source
+
+# User-installed command-line tools, including Claude Code
+fish_add_path --global "$HOME/.local/bin"
 
 # Starship prompt
 starship init fish | source

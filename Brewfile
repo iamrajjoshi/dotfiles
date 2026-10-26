@@ -1,7 +1,8 @@
 # Personal CLI tools
 tap "iamrajjoshi/tap"
+tap "oven-sh/bun"
 
-brew "bun"
+brew "oven-sh/bun/bun"
 brew "coreutils"
 brew "direnv"
 brew "fd"
