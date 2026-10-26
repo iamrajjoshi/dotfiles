@@ -140,12 +140,12 @@ On a personal machine without local overrides, everything works standalone.
 
 ## Application Preferences
 
-- **iTerm2:** `install.sh` configures iTerm2 to load the curated preferences and Default/Raj profiles in this repo.
+- **iTerm2:** legacy preferences remain in this repo for reference; setup does not apply them.
 - **Terminal:** `install.sh` merges the Clear Dark profile into Terminal and selects it for startup and new windows.
 - **Rectangle:** `install.sh` restores the saved shortcuts, including intentionally disabled half-screen shortcuts.
-- **Sublime Text:** `install.sh` links the user preferences and Package Control manifest. On a new machine, choose **Tools → Install Package Control** once; Package Control will then restore JsPrettier.
+- **Sublime Text:** the app remains in the Brewfile. Setup leaves its preferences alone; the saved preferences and package manifest remain available for manual use.
 
-Quit iTerm2, Terminal, and Rectangle before running `install.sh`, then reopen them afterward.
+Quit Terminal and Rectangle before running `install.sh`, then reopen them afterward.
 
 ## macOS Settings
 
