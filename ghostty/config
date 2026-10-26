@@ -39,41 +39,5 @@ keybind = cmd+enter=unbind
 keybind = cmd+left=text:\x1bOH
 keybind = cmd+right=text:\x1bOF
 
-# tmux integration — Cmd keys send prefix (Ctrl-A) sequences to tmux
-keybind = cmd+d=text:\x01\\
-keybind = cmd+shift+d=text:\x01-
-keybind = cmd+t=text:\x01c
-keybind = cmd+w=text:\x01x
-keybind = cmd+shift+w=text:\x01X
-keybind = cmd+shift+left_bracket=text:\x01p
-keybind = cmd+shift+right_bracket=text:\x01n
-keybind = cmd+1=text:\x011
-keybind = cmd+2=text:\x012
-keybind = cmd+3=text:\x013
-keybind = cmd+4=text:\x014
-keybind = cmd+5=text:\x015
-keybind = cmd+6=text:\x016
-keybind = cmd+7=text:\x017
-keybind = cmd+8=text:\x018
-keybind = cmd+9=text:\x019
-keybind = cmd+opt+left=text:\x01h
-keybind = cmd+opt+right=text:\x01l
-keybind = cmd+opt+up=text:\x01k
-keybind = cmd+opt+down=text:\x01j
-# keybind = global:ctrl+grave_accent=toggle_quick_terminal
-
-# Neovim Cmd-key bindings — remap Cmd to Ctrl/Ctrl+Shift (CSI u encoding)
-# tmux doesn't understand Super/Cmd modifier, but handles Ctrl (5) and Ctrl+Shift (6) fine
-keybind = cmd+p=text:\x1b[112;5u
-keybind = cmd+shift+f=text:\x1b[102;6u
-keybind = cmd+b=text:\x1b[98;6u
-keybind = cmd+s=text:\x1b[115;5u
-keybind = cmd+/=text:\x1b[47;5u
-keybind = cmd+z=text:\x1b[122;5u
-keybind = cmd+shift+z=text:\x1b[122;6u
-
 # 25 MB scrollback
 scrollback-limit = 25000000
-
-# Auto-start tmux (attach to existing session or create "main")
-command = /opt/homebrew/bin/tmux new-session -A -s main

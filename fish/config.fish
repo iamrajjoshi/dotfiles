@@ -9,6 +9,11 @@ set fish_greeting ""
 # User-installed command-line tools, including Claude Code
 fish_add_path --global "$HOME/.local/bin"
 
+# Project Node versions (.nvmrc / .node-version), shared with Zsh.
+if command -q fnm
+    fnm env --use-on-cd --shell fish | source
+end
+
 # Starship prompt
 starship init fish | source
 
