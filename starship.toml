@@ -10,7 +10,6 @@ add_newline = false
 command_timeout = 2000
 
 format = """
-$username\
 $hostname\
 $directory\
 $git_branch\
@@ -19,6 +18,12 @@ $git_status\
 $cmd_duration\
 $line_break\
 $character"""
+
+[hostname]
+ssh_only = true
+ssh_symbol = "☁ "
+format = "[$ssh_symbol$hostname]($style) "
+style = "bold cyan"
 
 [directory]
 style = "blue"

@@ -47,6 +47,13 @@ project. Homebrew Node remains installed for packages such as Gloss; development
 shells prefer the fnm-selected version. Old NVM installations can remain on disk,
 but these shell configs do not load NVM.
 
+## SSH Prompt Badge
+
+The shared Starship prompt shows a cyan `☁ <hostname>` badge only inside SSH
+sessions, including Fish and Zsh. Local sessions keep the compact prompt.
+Servers use their short hostname by default. Keep hostname nicknames under
+`[hostname].aliases` only in a machine-local Starship config outside this repo.
+
 ## Terminal Features
 
 Choose tmux and Willow independently during installation. Pass matching choices
