@@ -51,10 +51,10 @@ done
 [[ "$USE_WILLOW" == 0 || "$USE_WILLOW" == 1 ]] || { echo 'Invalid USE_WILLOW in features.conf' >&2; exit 2; }
 [[ "$SHELL_PATH" == /* && -x "$SHELL_PATH" && ! -d "$SHELL_PATH" ]] || { echo "Shell is not an absolute executable: $SHELL_PATH" >&2; exit 2; }
 if [[ "$USE_TMUX" == 1 ]]; then
-    TMUX_BIN="$(command -v tmux)" || { echo 'tmux is enabled but missing. Install it with: brew install tmux' >&2; exit 1; }
+    TMUX_BIN="$(command -v tmux)" || { echo 'tmux is enabled but missing. Run ./install.sh to install dependencies' >&2; exit 1; }
 fi
 if [[ "$USE_WILLOW" == 1 ]]; then
-    command -v willow >/dev/null 2>&1 || { echo 'Willow is enabled but missing. Install it with: brew install iamrajjoshi/tap/willow' >&2; exit 1; }
+    command -v willow >/dev/null 2>&1 || { echo 'Willow is enabled but missing. Install the Willow CLI before enabling it' >&2; exit 1; }
 fi
 
 # Replace links as links, never write through them into the source repository.

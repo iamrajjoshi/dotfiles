@@ -1,8 +1,8 @@
 # dotfiles
 
-Personal dev setup for macOS — fish + zsh + Starship.
+Personal dev setup for macOS and Debian/Ubuntu Linux — Fish + Zsh + Starship.
 
-## New Machine Setup
+## macOS Setup
 
 ```bash
 # 1. Install Homebrew
@@ -32,6 +32,62 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.
 
 After step 5, open a new terminal — Starship prompt, all aliases, and both shells should work.
 
+## Linux Setup
+
+On Debian/Ubuntu (including Nebius VMs), clone the repo and run:
+
+```bash
+git clone https://github.com/iamrajjoshi/dotfiles.git ~/code/dotfiles
+cd ~/code/dotfiles
+./install.sh --tmux --no-willow
+```
+
+The installer uses apt for shell dependencies, installs Starship to
+`~/.local/bin` when missing, and upgrades older distro `lsd` packages to 1.2.0.
+It links the same Fish, Zsh, Starship, lsd, and tmux appearance used on macOS.
+It does not import macOS app preferences, replace existing Linux Git identity,
+authentication or signing settings, or change the account's login shell.
+Node, project runtimes, agent CLIs, and cloud credentials remain separate.
+
+To make Fish the login shell after checking the installation:
+
+```bash
+chsh -s "$(command -v fish)"
+```
+
+Or select Fish just for Ghostty and tmux:
+
+```bash
+./scripts/configure-features.sh --tmux --no-willow --shell "$(command -v fish)"
+```
+
+Use `./install.sh --skip-deps` when dependencies are already installed. Other
+Linux distributions can use that mode after installing the listed shell tools
+manually. macOS dependency setup uses Homebrew; installing GUI applications from
+the Brewfile remains optional. The installer records the resolved Homebrew path
+in machine-local bootstrap files, so shared shell configs contain no install path.
+
+## Installation Checks
+
+Every installation runs this check; it can also be rerun independently:
+
+```bash
+./scripts/check-install.sh
+```
+
+It starts a real interactive Fish session and waits for the first prompt before
+checking Starship ownership, tool paths, and Fish/fzf compatibility. This catches
+prompt-event overrides that `fish -ic` alone misses. The async-prompt plugin is
+removed during migration, and fzf.fish is pinned to v10.3 for Fish 3.7 support.
+The checker starts a private tmux server to verify its shell, Ctrl-A prefix and
+inherited PATH; it does not touch running sessions or restore saved sessions.
+
+Regression checks use isolated homes and do not install system packages:
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests
+```
+
 ## Node Versions
 
 Fish and Zsh use `fnm` with automatic switching from `.nvmrc` or `.node-version`.
@@ -51,8 +107,17 @@ but these shell configs do not load NVM.
 
 The shared Starship prompt shows a cyan `☁ <hostname>` badge only inside SSH
 sessions, including Fish and Zsh. Local sessions keep the compact prompt.
-Servers use their short hostname by default. Keep hostname nicknames under
-`[hostname].aliases` only in a machine-local Starship config outside this repo.
+Servers use their short hostname by default. Keep hostname nicknames in
+a private `~/.config/dotfiles/starship.local.toml` outside this repo:
+
+```toml
+[hostname.aliases]
+"your-server-hostname" = "your-short-label"
+```
+
+The installer appends that table to the shared config in `~/.config/starship.toml`.
+Rerun the installer after changing the shared prompt or private aliases. Do not
+repeat a `[hostname]` table in the private file; use `[hostname.aliases]`.
 
 ## Terminal Features
 
@@ -129,9 +194,13 @@ sublime/              # Sublime Text preferences and package manifest
 zed/settings.json     # Zed editor settings
 zed/keymap.json       # Zed key bindings
 starship.toml         # Shared Starship prompt
+lsd/config.yaml       # Shared file colors and icons
+fish/colors.fish     # Shared Fish syntax colors
 .gitconfig            # Git config (includes ~/.gitconfig_local)
 Brewfile              # Homebrew packages
-install.sh            # Dotfiles installer with terminal feature flags
+install.sh            # macOS + Debian/Ubuntu installer with terminal feature flags
+scripts/install-dependencies.sh # OS-specific shell dependencies
+scripts/check-install.sh # Interactive shell and isolated tmux health check
 scripts/configure-features.sh # Terminal-only feature configuration
 ```
 

@@ -1,0 +1,7 @@
+# Ignore machine-specific LS_COLORS so file colors use one shared theme.
+color:
+  when: auto
+  theme: no-lscolors
+icons:
+  when: auto
+  theme: fancy

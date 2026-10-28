@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 import subprocess
 import shlex
+import shutil
 import tempfile
 import unittest
 
@@ -22,8 +23,10 @@ class FeaturesTest(unittest.TestCase):
             p = self.bin / tool
             p.write_text('#!/bin/sh\nexit 0\n')
             p.chmod(0o755)
-        self.env = dict(os.environ, HOME=str(self.home), SHELL='/bin/sh',
-                        PATH=f'{self.bin}:/usr/bin:/bin')
+        # Keep host-installed tmux/Willow out of missing-dependency checks.
+        for tool in ('dirname', 'mkdir', 'mktemp', 'cat', 'cmp', 'head', 'rm', 'mv', 'id', 'awk'):
+            (self.bin / tool).symlink_to(shutil.which(tool))
+        self.env = dict(os.environ, HOME=str(self.home), SHELL='/bin/sh', PATH=str(self.bin))
 
     def run_setup(self, *args, success=True):
         result = subprocess.run(['/bin/bash', str(SCRIPT), *args], env=self.env,
